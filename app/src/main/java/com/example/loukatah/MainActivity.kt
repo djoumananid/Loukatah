@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity() {
             LoukatahTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "BenAicha!",
+                        name = "Mahfoud!",
                         modifier = Modifier.padding(innerPadding)
                     )
                     //FirstUI(modifier = Modifier.padding(innerPadding))
