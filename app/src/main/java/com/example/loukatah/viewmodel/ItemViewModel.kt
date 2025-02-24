@@ -21,16 +21,25 @@ class ItemViewModel() : ViewModel() {
     val uiState: StateFlow<UIState> = _uiState.asStateFlow()
 
     init {
-        getItems()
+        getItems(4 , "")
     }
 
-    fun getItems() {
+    fun getItems(X : Int , S : String) {
         viewModelScope.launch {
             _uiState.value = _uiState.value.copy(isLoading = true)
             try {
                 delay(2000)
-                val items = ItemRepository.getItems()
-                _uiState.value = _uiState.value.copy(items = items, isLoading = false)
+
+                if(X == 2){
+                    val items = ItemRepository.getCategoryE(S)
+                    _uiState.value = _uiState.value.copy(items = items, isLoading = false)
+                }else if (X == 3){
+                    val items = ItemRepository.getCategoryD(S)
+                    _uiState.value = _uiState.value.copy(items = items, isLoading = false)
+                }else{
+                    val items = ItemRepository.getCategoryPI(S)
+                    _uiState.value = _uiState.value.copy(items = items, isLoading = false)
+                }
             } catch (e: Exception) {
                 _uiState.value = _uiState.value.copy(error = e.message, isLoading = false)
             }
