@@ -14,7 +14,7 @@ object ItemRepository {
             item_category = "Personal Items",
             coordinates = Pair(34.0522, -118.2437),
             date_lost = Date(),
-            createdAt = Date(),
+            createdAt = Date().toString(),
             updatedAt = Date()
         ),
         Item(
@@ -26,7 +26,7 @@ object ItemRepository {
             item_category = "Electronics",
             coordinates = Pair(34.0522, -118.2437),
             date_lost = Date(),
-            createdAt = Date(),
+            createdAt = Date().toString(),
             updatedAt = Date()
         ),
         Item(
@@ -38,7 +38,7 @@ object ItemRepository {
             item_category = "Personal Items",
             coordinates = Pair(34.0522, -118.2437),
             date_lost = Date(),
-            createdAt = Date(),
+            createdAt = Date().toString(),
             updatedAt = Date()
         ),
         Item(
@@ -50,7 +50,7 @@ object ItemRepository {
             item_category = "Electronics",
             coordinates = Pair(34.0522, -118.2437),
             date_lost = Date(),
-            createdAt = Date(),
+            createdAt = Date().toString(),
             updatedAt = Date()
         ),
         Item(
@@ -62,10 +62,37 @@ object ItemRepository {
             item_category = "Documents",
             coordinates = Pair(34.0522, -118.2437),
             date_lost = Date(),
-            createdAt = Date(),
+            createdAt = Date().toString(),
             updatedAt = Date()
         )
     )
+    fun getCategoryPI(S : String):List<Item>{
+         val newItems = mutableListOf<Item>()
+            for(item in items){
+                if (item.item_category == "Personal Items" && (item.description.contains(S , ignoreCase = true) || S == "")){
+                        newItems.add(item)
+                }
+            }
+        return newItems
+    }
+    fun getCategoryE(S : String):List<Item>{
+        val newItems = mutableListOf<Item>()
+        for(item in items){
+            if (item.item_category == "Electronics" && (item.description.contains(S , ignoreCase = true) || S == "")){
+                    newItems.add(item)
+            }
+        }
+        return newItems
+    }
+    fun getCategoryD(S : String):List<Item>{
+        val newItems = mutableListOf<Item>()
+        for(item in items){
+            if (item.item_category == "Documents" && (item.description.contains(S , ignoreCase = true) || S == "")){
+                newItems.add(item)
+            }
+        }
+        return newItems
+    }
 
     fun getItems(): List<Item> {
         return items
