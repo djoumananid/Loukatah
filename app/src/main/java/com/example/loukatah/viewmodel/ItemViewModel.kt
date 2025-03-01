@@ -36,8 +36,12 @@ class ItemViewModel() : ViewModel() {
                 }else if (X == 3){
                     val items = ItemRepository.getCategoryD(S)
                     _uiState.value = _uiState.value.copy(items = items, isLoading = false)
-                }else{
+                }else if (X == 1){
                     val items = ItemRepository.getCategoryPI(S)
+                    _uiState.value = _uiState.value.copy(items = items, isLoading = false)
+                }
+                else{
+                    val items = ItemRepository.getItems()
                     _uiState.value = _uiState.value.copy(items = items, isLoading = false)
                 }
             } catch (e: Exception) {

@@ -167,8 +167,11 @@ fun MainScreen(itemViewModel: ItemViewModel, itemCategoryViewModel: ItemCategory
                                     itemViewModel.getItems(1 , "")
                                 }else if(itemCategory.id == "2"){
                                     itemViewModel.getItems(2 , "")
-                                }else{
+                                }else if (itemCategory.id == "3"){
                                     itemViewModel.getItems(3 , "")
+                                }
+                                else{
+                                    itemViewModel.getItems(4 , "")
                                 }
                             },
                             icon = {
