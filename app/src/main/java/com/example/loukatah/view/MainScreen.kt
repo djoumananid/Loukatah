@@ -21,7 +21,6 @@ import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.*
-import androidx.compose.material3.R
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -79,7 +78,6 @@ fun MainScreen(itemViewModel: ItemViewModel, itemCategoryViewModel: ItemCategory
                                 }else{
                                     itemViewModel.getItems(3 , textInput)
                                 }
-
                                         },
                         textStyle = TextStyle(
                             color = MaterialTheme.colorScheme.onBackground,

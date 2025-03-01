@@ -11,6 +11,6 @@ data class Item(
     val item_category: String,
     val coordinates: Pair<Double, Double>,
     val date_lost: Date,
-    val createdAt: Date,
+    val createdAt: String,
     val updatedAt: Date
 )

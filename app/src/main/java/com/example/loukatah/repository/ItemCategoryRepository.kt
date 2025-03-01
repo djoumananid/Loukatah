@@ -1,5 +1,12 @@
 package com.example.loukatah.repository
 
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Newspaper
+import androidx.compose.material.icons.filled.People
+import androidx.compose.material.icons.filled.PhoneAndroid
+import androidx.compose.material.icons.outlined.Newspaper
+import androidx.compose.material.icons.outlined.People
+import androidx.compose.material.icons.outlined.PhoneAndroid
 import com.example.loukatah.model.ItemCategory
 
 object ItemCategoryRepository {
@@ -7,17 +14,20 @@ object ItemCategoryRepository {
         ItemCategory(
             id = "1",
             name = "Personal Items",
-            icon = "https://cdn-icons-png.flaticon.com/512/1077/1077114.png"
+            selectedIcon = Icons.Filled.People,
+            unselectedIcon =  Icons.Outlined.People,
         ),
         ItemCategory(
             id = "2",
             name = "Electronics",
-            icon = "https://cdn-icons-png.flaticon.com/512/2972/2972035.png"
+            selectedIcon = Icons.Filled.PhoneAndroid,
+            unselectedIcon =  Icons.Outlined.PhoneAndroid,
         ),
         ItemCategory(
             id = "3",
             name = "Documents",
-            icon = "https://cdn-icons-png.flaticon.com/512/2997/2997142.png"
+            selectedIcon = Icons.Filled.Newspaper,
+            unselectedIcon =  Icons.Outlined.Newspaper,
         )
     )
 
